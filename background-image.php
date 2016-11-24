@@ -48,15 +48,11 @@ Template Name: background-image
 
 
 <!--include jquery & backstretch-->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript"
+        src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/jquery.backstretch.min.js"></script>
 <script type="text/javascript">
-	/*$("h1,p,a").css("color","rgb(84,66,47)");*/
 	$.backstretch("<?php echo get_post_meta($post->ID, 'background-image', true) ?>", {speed: 150});
-	/*$.load("<?php echo get_post_meta($post->ID, 'background-image', true) ?>", function() {
-		$("h1,p,a").css("color","white");
-	});
-	$("h1,p,a").css("color","white");*/
 </script>
 
 <?php endwhile; endif ?>

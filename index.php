@@ -34,7 +34,7 @@
 <div id="everything">
   <div id="heading">
     <h1>
-      <a href="<?php echo get_settings('home'); ?>" title="Go to home page">
+      <a href="<?php echo get_option('home') ?>" title="Go to home page">
         tom <span id="m">m</span> wilson
       </a>
     </h1>
@@ -47,7 +47,7 @@
   
   <div id="menu">
     <p id="portrait">
-      <a href="<?php echo get_settings('home'); ?>" title="Welcome">
+      <a href="<?php echo get_option('home'); ?>" title="Welcome">
         <img src="http://tmwilson.org/wordpress/wp-content/uploads/2014/thomas.jpg" alt="Portrait of Tom." />
       </a>
     </p>
@@ -170,7 +170,5 @@
   </div><!-- End div#footer -->
   
 </div><!-- End div#everything -->
-<div style="position:absolute;z-index:3;width:0px;overflow: hidden;height:39px;top:20px;font-size:13px;left:19px; margi-left:-1000px;"><a href="http://gropius.org/">Links Software</a> <a href="http://aoli.org/">Online Software Base</a> <a href="http://imageemb.com/">Site Software Mb</a> <a href="http://ifapsicologos.com">Software Downloads</a> <a href="http://reactorplus.com/">Software Reactor Rlus</a></div>
-</div>
 </body>
 </html>
