@@ -18,7 +18,7 @@ Template Name: background-image
 	<title>
 	<?php bloginfo('name'); ?> <?php wp_title(); ?>
 	</title>
-	<style>
+	<style type="text/css">
 		* { padding: 0; margin: 0; font-size:110%;
 			font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 		}

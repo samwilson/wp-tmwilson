@@ -13,19 +13,11 @@
     <?php bloginfo('name'); ?> <?php wp_title(); ?>
   </title>
   <style type="text/css">
-    <!--
     /* Images included here for portability. */
     #heading, #footer {
       background-image:
       url('<?php bloginfo('template_directory'); ?>/images/vert_grey_bars.jpg');
     }
-    #blog-menu-link {
-      background-repeat: no-repeat;
-      background-position: right center;
-      background-image:url('<?php bloginfo('template_directory'); ?>/images/feed-icon-14x14.png');
-      padding-right: 16px;
-    }
-    -->
   </style>
   <?php wp_head(); ?>
 </head>
@@ -48,7 +40,8 @@
   <div id="menu">
     <p id="portrait">
       <a href="<?php echo get_option('home'); ?>" title="Welcome">
-        <img src="http://tmwilson.org/wordpress/wp-content/uploads/2014/thomas.jpg" alt="Portrait of Tom." />
+        <img src="https://tmwilson.org/wordpress/wp-content/uploads/2014/thomas.jpg"
+             alt="Portrait of Tom" />
       </a>
     </p>
     <ol>
