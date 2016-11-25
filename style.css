@@ -86,6 +86,8 @@ div#body li {color:black}
 #body .commentlist p {text-indent:0}
 #body .prev-next-navigation { text-align:center;margin-top:2em }
 
+.library-thing-widget img { top:0!important; left:10px!important }
+
 #menu {margin: 0;
 	border: 0;
 	padding: 0;
