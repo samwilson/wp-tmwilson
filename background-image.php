@@ -4,17 +4,16 @@ Template Name: background-image
 */
 ?>
 
-<?php echo'<?xml version="1.0" encoding="UTF-8"?>'; ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head profile="http://gmpg.org/xfn/11">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/print.css" type="text/css" media="print" />
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<meta name="MSSmartTagsPreventParsing" content="true" />
-	<meta http-equiv="imagetoolbar" content="false" />	
+	<meta http-equiv="imagetoolbar" content="false" />
 	<title>
 	<?php bloginfo('name'); ?> <?php wp_title(); ?>
 	</title>
@@ -33,30 +32,25 @@ Template Name: background-image
 		#read-on a { padding:0.1em; border:1px solid rgba(255,255,255,0.3); }
 	</style>
 	<?php wp_head(); ?>
-</head>	
-    
+</head>
+
 <body>
 
-	<h1>tom m wilson</h1>
+	<h1><?php bloginfo('name'); ?></h1>
 
-    <?php if (have_posts()) : ?>
-        <?php while (have_posts()) : the_post(); ?>
+	<?php if (have_posts()) : ?>
+		<?php while (have_posts()) : the_post(); ?>
 
-<div id="content"><?php the_content() ?></div>
+		<div id="content"><?php the_content() ?></div>
+		<p id="read-on"><a href="<?php echo site_url('about') ?>">Read on…</a></p>
 
-<p id="read-on"><a href="/about">Read on…</a></p>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js" integrity="sha256-V52dl3OFjoY+fYAkifhLJ7f1V7mZAKPGCQoWzoQxrEU=" crossorigin="anonymous"></script>
+		<script type="text/javascript">
+			$.backstretch("<?php bloginfo('template_directory'); ?>/images/front-page.jpg");
+		</script>
 
+	<?php endwhile; endif ?>
 
-<!--include jquery & backstretch-->
-<script type="text/javascript"
-        src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/jquery.backstretch.min.js"></script>
-<script type="text/javascript">
-	$.backstretch("<?php echo get_post_meta($post->ID, 'background-image', true) ?>", {speed: 150});
-</script>
-
-<?php endwhile; endif ?>
-
-</body>	
-
+</body>
 </html>

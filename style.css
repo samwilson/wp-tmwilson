@@ -2,30 +2,24 @@
 Theme Name: Tom's Theme
 Theme URI: https://github.com/samwilson/wp-tmwilson
 Description: A theme for my brother Tom.  <a href="http://thoreau.eserver.org/poohof.html">Happy Thursday</a>, Tom!
-Version: 1
+Version: 2.0.0
 Author: Sam Wilson
 Author URI: https://samwilson.id.au/
 */
 
-input, textarea {z-index: 10}
-.hide {display:none}
-body {margin: 0 17% 0 17%;
-	/*background-color: #f2f2f2;*/
-	background-color: white;
-	/*color: #777;*/
+body {
 	color: #200;
-	font-family: arial, tahoma, verdana, sans-serif}
+	font-family: arial, tahoma, verdana, sans-serif;
+}
 
 #everything {
-	/*border: 1px solid #999997;*/
 	border: 1px solid #b6c77b;
 	border-top: 0;
 	padding: 0;
-	/*background-color: #f4f7e0*/
-	background-color: white
-	}
+	background-color: white;
+}
 
-#heading {margin: 0;
+header {margin: 0;
 	border: 0;
 	border-bottom: 8px solid #777;
 	/*border-bottom: 8px solid #dc0000;*/
@@ -36,22 +30,32 @@ body {margin: 0 17% 0 17%;
 	background-color: transparent;
 	background-repeat: repeat-x;
 	width: 100%}
-div#heading span#m {color: #999}
-   #heading .arrow {font-size:0.9em}
-div#heading h1 {margin:0; font-size:2.5em; font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif }
-div#heading h1 img.triangle {height:20px; width:20px; position:relative; left:-80px}
-div#heading a, div#heading a:link, div#heading a:visited {
+header span#m {
+	color: #999
+}
+header .arrow {
+	font-size:0.9em
+}
+header h1 {
+	margin:0; font-size:2.5em; font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+}
+header a,
+header a:link,
+header a:visited {
 	text-decoration: none;
-	color: #b6c77b}
-div#heading p {margin:0;
+	color: #b6c77b;
+}
+header p {margin:0;
 	border:0;
 	padding:0;
-	line-height:0}
-div#heading img {width:100%;
+	line-height:0;
+}
+header img {width:100%;
 	margin:0;
 	padding:0;
 	border:0;
-	height: 100px}
+	height: 100px;
+}
 
 #body {margin: 0;
 	text-align: justify;
@@ -64,18 +68,12 @@ div#heading img {width:100%;
 	font-size: 0.9em;
 }
 #body .archive-title { text-align:center; font-size:1.8em }
-div#body h2 {color: #b6c77b; padding-top: 0.4em; text-align:left}
-div#body h3 {text-align:center}
-div#body a, div#body a:link, div#body a:visited {color: #b6c77b}
-div#body hr {width: 70% }
-#body p,
-#body dd {margin:0;
-	margin-top: 0.5em;
-	line-height: 1.5em;
-	text-indent: 3em}
-div#body dt {border-top: 1px dotted #b6c77b; margin-top:1em}
-div#body ul {color:#b6c77b}
-div#body li {color:black}
+#body h2 {color: #b6c77b; padding-top: 0.4em; text-align:left}
+#body h3 {text-align:center}
+#body a, div#body a:link, div#body a:visited {color: #b6c77b}
+#body dt {border-top: 1px dotted #b6c77b; margin-top:1em}
+#body ul {color:#b6c77b}
+#body li {color:black}
 #body img {max-width:90%; display:block; margin:auto; border:2px solid #b6c77b}
 #body .initials {text-align:left; margin:3em 0 0 25px}
 #body .initials img {height:28px; border:0}
@@ -84,20 +82,16 @@ div#body li {color:black}
 #body textarea#comment {width:95%}
 #body .commentlist li {margin:1em 0; border-left:3px solid #ddd; padding-left:0.5em}
 #body .commentlist p {text-indent:0}
-#body .prev-next-navigation { text-align:center;margin-top:2em }
 
 .library-thing-widget img { top:0!important; left:10px!important }
 
-#menu {margin: 0;
-	border: 0;
-	padding: 0;
-	width:19%;
-	float:right}
-#menu ol {list-style-type:none;
+#menu ol {
+	list-style-type:none;
 	padding:0;
 	margin:0;
-	border:0}
-#menu ol li a {display: block;
+	border:0;
+}
+#menu ol li a {
 	margin:0;
 	padding: 0.1em;
 	padding-top: 0.3em;
@@ -106,26 +100,33 @@ div#body li {color:black}
 	background-color: #e6e9cd;
 	color: #666;
 	text-decoration: none;
-	text-align: right}
+	text-align: right;
+}
 #menu ol li a:hover {
 	color: #ab583e;
 	background-color: #ababab;
-	border-color: #ab583e}
-#menu p#portrait {text-align: right;
+	border-color: #ab583e;
+}
+#menu p#portrait {
+	text-align: right;
 	padding:0;
 	margin:0;
 	border:0;
 	line-height:0;
 	background-color: #777;
-	/*background-color: #dc0000;*/
-	width: 100%}
-#menu p#portrait img {display: inline;
+	width: 100%;
+}
+#menu p#portrait img {
+	display: inline;
 	margin:0;
 	padding:0;
 	border:0;
-	border-left:4px solid #777}
-	/*border-left:4px solid #dc0000}*/
-#menu p {font-size:smaller; text-align:center}
+	border-left:4px solid #777;
+}
+#menu p {
+	font-size:smaller;
+	text-align:center;
+}
 
 #footer {margin: 0;
 	border: 0;
