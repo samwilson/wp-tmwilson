@@ -19,7 +19,8 @@ body {
 	background-color: white;
 }
 
-header {margin: 0;
+header {
+	margin: 0;
 	border: 0;
 	border-bottom: 8px solid #777;
 	/*border-bottom: 8px solid #dc0000;*/
@@ -29,7 +30,8 @@ header {margin: 0;
 	clear: both;
 	background-color: transparent;
 	background-repeat: repeat-x;
-	width: 100%}
+	width: 100%;
+}
 header span#m {
 	color: #999
 }
