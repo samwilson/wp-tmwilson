@@ -1,7 +1,7 @@
-/*  
+/*
 Theme Name: Tom's Theme
 Theme URI: https://github.com/samwilson/wp-tmwilson
-Description: A theme for my brother Tom.  <a href="http://thoreau.eserver.org/poohof.html">Happy Thursday</a>, Tom!
+Description: A theme for my brother Tom. <a href="http://thoreau.eserver.org/poohof.html">Happy Thursday</a>, Tom!
 Version: 2.0.0
 Author: Sam Wilson
 Author URI: https://samwilson.id.au/
@@ -139,12 +139,18 @@ header img {width:100%;
 	font-size: 0.8em;
 	clear: both;
 	background-color: transparent;
-	background-repeat: repeat-x}
+	background-repeat: repeat-x;
+}
 #footer ul {
-	padding:0.3em;
-	margin:0;
-    list-style-type: none}
+	padding: 0.3em;
+	margin: 0;
+	list-style-type: none;
+}
 #footer ul li {display: inline}
 #footer ul li:before {content: " | "}
-#footer a, div#footer a:link, div#footer a:visited {color: #b6c77b;
-	visibility: inherit}
+#footer a,
+div#footer a:link,
+div#footer a:visited {
+	color: #b6c77b;
+	visibility: inherit;
+}
