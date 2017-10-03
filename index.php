@@ -7,7 +7,7 @@
 	<meta http-equiv="Content-Type"
 		  content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>"/>
 
-	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>"/>
+	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=2" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
 		  integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
