@@ -7,39 +7,31 @@ Author: Sam Wilson
 Author URI: https://samwilson.id.au/
 */
 
-body {
-	color: #200;
-	font-family: arial, tahoma, verdana, sans-serif;
-}
-
-#everything {
+header,
+main,
+nav,
+footer {
 	border: 1px solid #b6c77b;
-	border-top: 0;
-	padding: 0;
-	background-color: white;
+	border-width: 0 1px;
 }
+nav { border-left:0 }
+main { border-right:0 }
+
 
 header {
-	margin: 0;
-	border: 0;
 	border-bottom: 8px solid #777;
-	/*border-bottom: 8px solid #dc0000;*/
-	padding: 0;
 	text-align: center;
 	color: #b6c77b;
-	clear: both;
 	background-color: transparent;
 	background-repeat: repeat-x;
-	width: 100%;
 }
 header span#m {
 	color: #999
 }
-header .arrow {
-	font-size:0.9em
-}
 header h1 {
-	margin:0; font-size:2.5em; font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+	margin:0;
+	font-size:2.5em;
+	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
 }
 header a,
 header a:link,
@@ -47,28 +39,21 @@ header a:visited {
 	text-decoration: none;
 	color: #b6c77b;
 }
-header p {margin:0;
+header p {
+	margin:0;
 	border:0;
 	padding:0;
 	line-height:0;
 }
-header img {width:100%;
+header .banner {
+	width:100%;
 	margin:0;
 	padding:0;
 	border:0;
 	height: 100px;
+	background-size: contain;
 }
 
-#body {margin: 0;
-	text-align: justify;
-	border: 0;
-	padding: 1em;
-	width: 75%;
-	float: left;
-	background-color: white;
-	font-family: georgia, serif;
-	font-size: 0.9em;
-}
 #body .archive-title { text-align:center; font-size:1.8em }
 #body h2 {color: #b6c77b; padding-top: 0.4em; text-align:left}
 #body h3 {text-align:center}
@@ -87,6 +72,7 @@ header img {width:100%;
 
 .library-thing-widget img { top:0!important; left:10px!important }
 
+#menu { padding:0 }
 #menu ol {
 	list-style-type:none;
 	padding:0;
@@ -116,7 +102,6 @@ header img {width:100%;
 	border:0;
 	line-height:0;
 	background-color: #777;
-	width: 100%;
 }
 #menu p#portrait img {
 	display: inline;
@@ -130,27 +115,16 @@ header img {width:100%;
 	text-align:center;
 }
 
-#footer {margin: 0;
-	border: 0;
+footer {
 	border-top: 8px solid #777;
-	padding: 0;
-	text-align: center;
 	color: #b6c77b;
 	font-size: 0.8em;
-	clear: both;
 	background-color: transparent;
 	background-repeat: repeat-x;
 }
-#footer ul {
-	padding: 0.3em;
-	margin: 0;
-	list-style-type: none;
-}
-#footer ul li {display: inline}
-#footer ul li:before {content: " | "}
-#footer a,
-div#footer a:link,
-div#footer a:visited {
+footer a,
+footer a:link,
+footer a:visited {
 	color: #b6c77b;
 	visibility: inherit;
 }

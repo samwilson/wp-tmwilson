@@ -42,7 +42,7 @@ Template Name: background-image
 		<?php while (have_posts()) : the_post(); ?>
 
 		<div id="content"><?php the_content() ?></div>
-		<p id="read-on"><a href="<?php echo site_url('about') ?>">Read on…</a></p>
+		<p id="read-on"><a href="/about">Read on…</a></p>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js" integrity="sha256-V52dl3OFjoY+fYAkifhLJ7f1V7mZAKPGCQoWzoQxrEU=" crossorigin="anonymous"></script>
