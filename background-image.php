@@ -22,7 +22,7 @@ Template Name: background-image
 		a, h1, div, p { color:white }
 		a:hover { color: rgb(84,66,47); background-color:rgba(255,255,255,0.3); }
 		#read-on { margin-top:4em; text-align:right }
-		#read-on a { border:1px solid rgba(255,255,255,0.3); padding:0.2em; font-size:larger }
+		#read-on a { border:1px solid rgba(255,255,255,0.3); padding:0.2em; font-size:135% }
 	</style>
 	<?php wp_head(); ?>
 </head>
@@ -30,16 +30,16 @@ Template Name: background-image
 <body>
 
 	<main class="container-fluid">
-		<div class="row">
-			<header class="col-md-8 col-12">
-				<h1 class=""><?php bloginfo('name') ?></h1>
+		<div class="row mt-5">
+			<header class="col-md-8">
+				<h1 class="display-3"><?php bloginfo('name') ?></h1>
 				<p class="mt-4"><?php bloginfo('description') ?></p>
 			</header>
-			<article class="col-md-4 col-12">
+			<article class="col-md-4">
 				<?php if (have_posts()) : ?>
 				<?php while (have_posts()) : the_post(); ?>
 				<div class="text-justify"><?php the_content() ?></div>
-				<p class="" id="read-on"><a href="/about">Read on…</a></p>
+				<p id="read-on" class="fixed-bottom mr-3"><a href="/about">Read on…</a></p>
 				<?php endwhile; endif ?>
 			</article>
 		</div>
