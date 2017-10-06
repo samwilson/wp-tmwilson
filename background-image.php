@@ -30,10 +30,10 @@ Template Name: background-image
 <body>
 
 	<main class="container-fluid">
-		<div class="row mt-5">
+		<div class="row mt-md-5" mt-0>
 			<header class="col-md-8">
 				<h1 class="display-3"><?php bloginfo('name') ?></h1>
-				<p class="mt-4 h1"><?php bloginfo('description') ?></p>
+				<p class="mt-4 h3"><?php bloginfo('description') ?></p>
 			</header>
 			<article class="col-md-4">
 				<?php if (have_posts()) : ?>
