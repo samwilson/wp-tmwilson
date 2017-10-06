@@ -61,7 +61,7 @@ header .banner {
 #body dt {border-top: 1px dotted #b6c77b; margin-top:1em}
 #body ul {color:#b6c77b}
 #body li {color:black}
-#body img {max-width:90%; display:block; margin:auto; border:2px solid #b6c77b}
+#body img { display:block; margin:auto; border:2px solid #b6c77b}
 #body div.cv p,
 #body div.cv h4 {text-indent:0; margin-left:3em}
 #body #leave-a-comment {text-align:right}
