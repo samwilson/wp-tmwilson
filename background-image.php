@@ -8,16 +8,12 @@ Template Name: background-image
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
-	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+	<meta http-equiv="Content-Type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
+	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo( 'name' ); ?> Atom Feed" href="<?php bloginfo( 'atom_url' ); ?>" />
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<meta name="MSSmartTagsPreventParsing" content="true" />
-	<meta http-equiv="imagetoolbar" content="false" />
-	<title>
-	<?php bloginfo('name'); ?> <?php wp_title(); ?>
-	</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
-		  integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" />
+		integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" />
 	<style type="text/css">
 		a, h1, div, p { color:white }
 		a:hover { color: rgb(84,66,47); background-color:rgba(255,255,255,0.3); }
@@ -27,19 +23,22 @@ Template Name: background-image
 	<?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 
 	<main class="container-fluid">
-		<div class="row mt-md-5" mt-0>
+		<div class="row mt-md-5 mt-0">
 			<header class="col-md-8">
-				<h1 class="display-3"><?php bloginfo('name') ?></h1>
-				<p class="mt-4 h3"><?php bloginfo('description') ?></p>
+				<h1 class="display-3"><?php bloginfo( 'name' ); ?></h1>
+				<p class="mt-4 h3"><?php bloginfo( 'description' ); ?></p>
 			</header>
 			<article class="col-md-4">
-				<?php if (have_posts()) : ?>
-				<?php while (have_posts()) : the_post(); ?>
-				<div class="text-justify"><?php the_content() ?></div>
-				<p id="read-on" class="fixed-bottom mr-3"><a href="/about">Read on…</a></p>
+				<?php if ( have_posts() ) : ?>
+					<?php
+					while ( have_posts() ) :
+						the_post();
+						?>
+				<div class="text-justify"><?php the_content(); ?></div>
+				<p id="read-on" class="fixed-bottom mr-3"><a href="<?php echo site_url( 'about' ); ?>">Read on&hellip;</a></p>
 				<?php endwhile; endif ?>
 			</article>
 		</div>
@@ -48,7 +47,7 @@ Template Name: background-image
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js" integrity="sha256-V52dl3OFjoY+fYAkifhLJ7f1V7mZAKPGCQoWzoQxrEU=" crossorigin="anonymous"></script>
 	<script type="text/javascript">
-		$.backstretch("<?php bloginfo('template_directory'); ?>/images/front-page.jpg");
+		$.backstretch("<?php echo esc_url( get_template_directory_uri() ); ?>/images/front-page.jpg");
 	</script>
 </body>
 </html>

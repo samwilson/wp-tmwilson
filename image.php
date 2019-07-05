@@ -48,30 +48,41 @@
 		}
 	</style>
 </head>
-<body>
+<body <?php body_class(); ?>>
 
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php
+if ( have_posts() ) :
+	while ( have_posts() ) :
+		the_post();
+		?>
 
 <h1>
-	<a href="<?php echo get_permalink($post->post_parent); ?>" rev="attachment" title="Return to blog post.">
+	<a href="<?php echo get_permalink( $post->post_parent ); ?>" rev="attachment" title="Return to blog post.">
 		<?php echo the_title(); ?>
 	</a>
 </h1>
 
 <p>
-	<span class='nav-link prev'><?php echo previous_image_link(0,'&larr;') ?></span>
-	<a href="<?php echo get_permalink($post->post_parent); ?>" rev="attachment" title="Return to blog post.">
-		<?php echo wp_get_attachment_image($post->ID, 'full'); ?></span>
+	<span class='nav-link prev'><?php previous_image_link( 0, '&larr;' ); ?></span>
+	<a href="<?php echo get_permalink( $post->post_parent ); ?>" rev="attachment" title="Return to blog post.">
+		<?php wp_get_attachment_image( $post->ID, 'full' ); ?>
 	</a>
-	<span class='nav-link next'><?php echo next_image_link(0,'&rarr;') ?></span>
+	<span class='nav-link next'><?php next_image_link( 0, '&rarr;' ); ?></span>
 </p>
 
 <div class="caption">
-	<?php if ( !empty($post->post_excerpt) ) the_excerpt(); ?><br />
-	
+		<?php
+		if ( ! empty( $post->post_excerpt ) ) {
+			the_excerpt();
+		}
+		?>
+		<br />
 </div>
 
-<?php endwhile; endif; ?>
+		<?php
+	endwhile;
+endif;
+?>
 
 </body>
 </html>

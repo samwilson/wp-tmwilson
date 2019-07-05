@@ -8,29 +8,28 @@
 
 	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>?v=2" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
-		  integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" />
+		integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" />
 
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo( 'name' ); ?> RSS Feed"
-		  href="<?php bloginfo( 'rss2_url' ); ?>" />
+		href="<?php bloginfo( 'rss2_url' ); ?>" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-	<title><?php bloginfo( 'name' ) ?><?php wp_title() ?></title>
 	<style type="text/css">
 		header, footer {
-			background-image: url('<?php bloginfo('template_directory'); ?>/images/vert_grey_bars.jpg');
+			background-image: url('<?php echo esc_url( get_template_directory_uri() ); ?>/images/vert_grey_bars.jpg');
 		}
 		header .banner {
-			background-image: url('<?php bloginfo('template_directory'); ?>/images/site_banner.jpg');
+			background-image: url('<?php echo esc_url( get_template_directory_uri() ); ?>/images/site_banner.jpg');
 		}
 	</style>
 	<?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 
 <div class="container" id="everything">
 	<header class="row">
-		<h1 class="col-12">
-			<a href="<?php echo get_option( 'home' ) ?>" title="Go to home page">
-				thomas <span id="m">m</span> wilson
+		<h1 class="col-12 page-title">
+			<a href="<?php echo home_url(); ?>" title="Go to home page">
+				thomas <span class="m">m</span> wilson
 			</a>
 		</h1>
 		<p class="col-12 banner"></p>
@@ -40,28 +39,25 @@
 
 		<nav id="menu" class="col-12 col-sm-2 order-sm-2">
 			<p id="portrait" class="d-none d-sm-block">
-				<a href="<?php echo get_option( 'home' ) ?>" title="Go to home page">
+				<a href="<?php echo home_url(); ?>" title="Go to home page">
 					<img src="https://tmwilson.org/wordpress/wp-content/uploads/2014/thomas.jpg" alt="Portrait of Tom"
-						 class="img-fluid" />
+						class="img-fluid" />
 				</a>
 			</p>
 			<ol class="text-center text-sm-right">
 				<li class="d-inline">
-					<a class="d-inline d-sm-block" href="<?php echo site_url( 'about' ) ?>">About me</a>
+					<a class="d-inline d-sm-block" href="<?php echo site_url( 'about' ); ?>">About me</a>
 				</li>
 				<li class="d-inline">
-					<a class="d-inline d-sm-block" href="<?php echo site_url( 'blog' ) ?>" id="blog-menu-link">Blog</a>
-				</li>
-				<li class="d-inline">
-					<a class="d-inline d-sm-block" href="<?php echo site_url( 'links' ) ?>">Links</a>
+					<a class="d-inline d-sm-block" href="<?php echo site_url( 'blog' ); ?>" id="blog-menu-link">Blog</a>
 				</li>
 			</ol>
 		</nav>
 
 		<main id="body" class="col-12 col-sm-10 order-sm-1">
 
-			<?php if ( is_archive() ): ?>
-				<?php query_posts( $query_string . '&posts_per_page=-1&order=asc' ) ?>
+			<?php if ( is_archive() ) : ?>
+				<?php query_posts( $query_string . '&posts_per_page=-1&order=asc' ); ?>
 				<p class="archive-title">
 					<?php
 					if ( is_day() ) {
@@ -80,35 +76,44 @@
 
 
 			<?php if ( have_posts() ) : ?>
-				<?php while ( have_posts() ) : the_post();
+				<?php
+				while ( have_posts() ) :
+					the_post();
 					if ( is_archive() ) {
 						global $more;
 						$more = 1;
-					} ?>
-					<article class="post container" id="post-<?php the_ID(); ?>">
+					}
+					?>
+					<article class="post container" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<h2>
-							<a href="<?php the_permalink() ?>"
-							   rel="bookmark"
-							   title="Permanent Link to <?php the_title(); ?>">
+							<a href="<?php the_permalink(); ?>" rel="bookmark"
+								title="Permanent Link to <?php the_title(); ?>">
 								<?php the_title(); ?>
 							</a>
 						</h2>
 						<?php if ( ! is_page() ) : ?>
-							<p class='date'><strong><?php the_time( 'F j<\sup>S</\sup>, Y' ) ?></strong></p>
+							<p class='date'><strong><?php the_time( 'F j<\sup>S</\sup>, Y' ); ?></strong></p>
 						<?php endif; ?>
 
 						<div class="entry">
 							<?php the_content( 'Read the rest of this entry &raquo;' ); ?>
 							<?php if ( 'open' == $post->comment_status && ! is_page() && ! is_single() ) { ?>
 								<p id="leave-a-comment">
-									<?php comments_popup_link( 'Leave a comment &raquo;', 'One comment &raquo;',
-										'% comments so far &raquo;', '', '' ); ?>
+									<?php
+									comments_popup_link(
+										'Leave a comment &raquo;',
+										'One comment &raquo;',
+										'% comments so far &raquo;',
+										'',
+										''
+									);
+									?>
 								</p>
 							<?php } ?>
 						</div>
 
 						<?php
-						if ( the_title( '', '', false ) == "Links" ) {
+						if ( the_title( '', '', false ) == 'Links' ) {
 							$bookmark_options = array(
 								'hide_invisible'   => 1,
 								'show_updated'     => 0,
@@ -120,7 +125,7 @@
 								'class'            => 'linkcat',
 								'show_description' => 1,
 								'category_before'  => '<dt>',
-								'category_after'   => '</dt>'
+								'category_after'   => '</dt>',
 							);
 							wp_list_bookmarks( $bookmark_options );
 						}
@@ -129,15 +134,15 @@
 					</article>
 				<?php endwhile; ?>
 
-				<?php if ( ! is_page() && ! is_single() ): ?>
+				<?php if ( ! is_page() && ! is_single() ) : ?>
 					<p class="text-center noprint">
-						<?php posts_nav_link( ' | ', '&laquo; Previous Page', 'Next Page &raquo;' ); ?>
+						<?php posts_nav_link( ' | ', '&larr; Previous Page', 'Next Page &rarr;' ); ?>
 					</p>
-				<?php elseif ( ! is_page() ): ?>
+				<?php elseif ( ! is_page() ) : ?>
 					<hr/>
 					<p class="row">
-						<span class="col-6 text-left"><?php previous_post_link(); ?></span>
-						<span class="col-6 text-right"><?php next_post_link(); ?></span>
+						<span class="col-6 text-left"><?php previous_post_link( '&larr; %link' ); ?></span>
+						<span class="col-6 text-right"><?php next_post_link( '%link &rarr;' ); ?></span>
 					</p>
 					<?php comments_template(); ?>
 				<?php endif; ?>
@@ -145,7 +150,7 @@
 			<?php else : ?>
 				<article class="container">
 					<h2>Not Found</h2>
-					<p>Sorry, but you seem to be looking for something that isn't here.</p>
+					<p>Sorry, but you seem to be looking for something that isn&lsquo;t here.</p>
 				</article>
 			<?php endif; ?>
 
@@ -153,12 +158,13 @@
 	</div>
 
 	<footer class="row pt-3">
-		<p class="col-<?php echo is_user_logged_in() ? 3 : 4 ?> text-center"><a href="<?php bloginfo( 'atom_url' ); ?>">News feed</a></p>
-		<p class="col-<?php echo is_user_logged_in() ? 3 : 4 ?> text-center">Content &copy; Thomas M. Wilson 2000&ndash;<?php echo date( 'Y' ); ?></p>
-		<?php if ( is_user_logged_in() ): ?>
-		<p class="col-<?php echo is_user_logged_in() ? 3 : 4 ?> text-center"><a href="<?php echo admin_url() ?>">Admin</a></p>
+		<?php $col_count = is_user_logged_in() ? 3 : 4; ?>
+		<p class="col-<?php echo $col_count; ?> text-center"><a href="<?php bloginfo( 'atom_url' ); ?>">News feed</a></p>
+		<p class="col-<?php echo $col_count; ?> text-center">Content &copy; Thomas M. Wilson 2000&ndash;<?php echo date( 'Y' ); ?></p>
+		<?php if ( is_user_logged_in() ) : ?>
+		<p class="col-<?php echo $col_count; ?> text-center"><a href="<?php echo admin_url(); ?>">Admin</a></p>
 		<?php endif ?>
-		<p class="col-<?php echo is_user_logged_in() ? 3 : 4 ?> text-center"><?php wp_loginout() ?></p>
+		<p class="col-<?php echo $col_count; ?> text-center"><?php wp_loginout(); ?></p>
 	</footer>
 
 </div><!-- End div#everything -->
@@ -172,6 +178,6 @@
 		integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
 		crossorigin="anonymous"></script>
 
-<?php wp_footer() ?>
+<?php wp_footer(); ?>
 </body>
 </html>

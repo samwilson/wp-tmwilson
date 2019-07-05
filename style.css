@@ -2,32 +2,35 @@
 Theme Name: Tom's Theme
 Theme URI: https://github.com/samwilson/wp-tmwilson
 Description: A theme for my brother Tom. <a href="http://thoreau.eserver.org/poohof.html">Happy Thursday</a>, Tom!
-Version: 2.0.0
+Version: 2.0.1
 Author: Sam Wilson
 Author URI: https://samwilson.id.au/
+License: GNU General Public License v3 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
 
 header,
 main,
 nav,
 footer {
-	border: 1px solid #b6c77b;
+	border-style: solid;
+	border-color: #b6c77b;
 	border-width: 0 1px;
 }
 nav { border-left:0 }
 main { border-right:0 }
 
-
+header,
+footer {
+	background-color: transparent;
+	background-repeat: repeat;
+}
 header {
 	border-bottom: 8px solid #777;
 	text-align: center;
 	color: #b6c77b;
-	background-color: transparent;
-	background-repeat: repeat-x;
 }
-header span#m {
-	color: #999
-}
+header .page-title .m {color:#999}
 header h1 {
 	margin:0;
 	font-size:2.5em;
@@ -61,7 +64,7 @@ header .banner {
 #body dt {border-top: 1px dotted #b6c77b; margin-top:1em}
 #body ul {color:#b6c77b}
 #body li {color:black}
-#body img { display:block; margin:auto; border:2px solid #b6c77b}
+#body img {display:block; margin:auto; border:2px solid #b6c77b; height:auto; max-width:100%}
 #body div.cv p,
 #body div.cv h4 {text-indent:0; margin-left:3em}
 #body #leave-a-comment {text-align:right}
@@ -118,8 +121,6 @@ footer {
 	border-top: 8px solid #777;
 	color: #b6c77b;
 	font-size: 0.8em;
-	background-color: transparent;
-	background-repeat: repeat-x;
 }
 footer a,
 footer a:link,
