@@ -1,0 +1,5 @@
+{
+  "require-dev": {
+    "mediawiki/minus-x": "^0.3"
+  }
+}
